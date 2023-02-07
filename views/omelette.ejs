@@ -1,0 +1,115 @@
+<%- include('header.ejs') %>
+
+    <div id="info_box">
+        <div>
+            <h1>How to Make an Omelette</h1>
+        </div>
+        <!-- <div>
+        
+        <p id="nobreak">Prep Time</p>
+        <p id="nobreak"> Cook Time</p>
+        
+    </div> -->
+        <div>
+            <table id="table">
+                <tr>
+                    <th>Prep Time</th>
+                    <th>Cook Time</th>
+                    <th>Total Time</th>
+                </tr>
+                <tr>
+                    <td>1 minute</td>
+                    <td>5 minutes</td>
+                    <td>6 minutes</td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <table id="table">
+                <tr>
+                    <th>Serving</th>
+                    <th>Yield</th>
+                </tr>
+                <tr>
+                    <td>1 serving</td>
+                    <td>1 omelet</td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <h1> Ingredients</h1>
+            <table id="table">
+                <tr>
+                    <td>2 large eggs</td>
+                </tr>
+                <tr>
+                    <td>1 tablespoon unsalted butter</td>
+                </tr>
+                <tr>
+                    <td> 2 tablespoons grated cheese, any kind</td>
+                </tr>
+                <tr>
+                    <td> 3 to 4 cherry tomatoes, cut in half and sprinkled lightly with salt</td>
+                </tr>
+                <tr>
+                    <td> 2 tablespoons chopped basil, parsley, or herb of your choice</td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+    <div>
+        <ul id="myUL">
+            <li>In a bowl, beat the eggs with a fork</li>
+            <li>In an 8-inch nonstick skillet over medium-low heat, melt the butter</li>
+            <li>Add the eggs to the skillet and cook without stirring until the edges begin to set
+                With a silicone spatula, push the edges toward the center of the pan and tilt the pan so the uncooked
+                eggs move to the edge.
+                Repeat until the eggs are somewhat set but still a little soft in the center, about 6 minutes</li>
+            <li>Place the cheese, tomatoes, and herbs in a line down the center of the omelette and cook for about 1
+                minute longer, or until the eggs are mostly set but still a little soft in the center.</li>
+            <li>Slide the spatula around one side of the omelette at the edge to loosen it. Slip it under the eggs, and
+                use it to carefully fold the omelette in half.
+                Slide the spatula under the folded omelette to loosen it from the pan. Tilt the pan over a plate and use
+                the spatula to nudge it onto the plate. Valah</li>
+        </ul>
+        <img src="/images/omelette.jpg" alt="not working" id="omelette">
+    </div>
+    <script>
+
+        function dark_mode() {
+            let btn = document.getElementById("btn");
+
+            if (btn.checked) {
+                document.body.style.background = "#404040";
+                document.body.style.transition = "1s ease";
+                localStorage.setItem("checked", "true");
+            }
+            else {
+                document.body.style.background = "#f3ecf1";
+                localStorage.setItem("checked", "false");
+            }
+
+        }
+        let result = localStorage.getItem("checked");
+        let btn = document.getElementById("btn");
+
+        if (result == "true") {
+            btn.checked = true;
+
+            document.body.style.background = "#404040";
+            document.body.style.transition = "1s ease";
+            for (let i = 0; i < document.getElementsByClassName("test").length; i++) {
+                document.getElementsByClassName("test").item(i).style.color = "#f3ecf1";
+            }
+        }
+        else {
+            btn.checked = false;
+            document.body.style.background = "#f3ecf1";
+            for (let i = 0; i < document.getElementsByClassName("test").length; i++) {
+                document.getElementsByClassName("test").item(i).style.color = "#000";
+            }
+        }
+
+    </script>
+    <%- include('footer.ejs') %>

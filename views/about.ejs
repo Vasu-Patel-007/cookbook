@@ -1,0 +1,48 @@
+<%- include('header.ejs') %>
+    <div id="about">
+        <div id="aboutBody">
+            <h2 id="mission"> Our Mission </h2>
+            <div id="mission_block">
+                <p>Here at Recipe Network, we pride ourselves in continuously updating our page with the newest recipes
+                    that you and your family will love! We believe that food brings us all together and we fully believe
+                    in this. We made sure that the recipes on our page aren't only delicious, but don't make you guilty
+                    after eating!</p>
+            </div>
+        </div>
+
+        <img src="/images/about.jpg" id="pic" style="width: 50%">
+
+        <script>
+
+            function dark_mode() {
+                let btn = document.getElementById("btn");
+
+                if (btn.checked) {
+                    document.body.style.background = "#404040";
+                    document.body.style.transition = "1s ease";
+                    localStorage.setItem("checked", "true");
+                }
+                else {
+                    document.body.style.background = "#f3ecf1";
+                    localStorage.setItem("checked", "false");
+                }
+
+            }
+            let result = localStorage.getItem("checked");
+            let btn = document.getElementById("btn");
+
+            if (result == "true") {
+                btn.checked = true;
+
+                document.body.style.background = "#404040";
+                document.body.style.transition = "1s ease";
+            }
+            else {
+                btn.checked = false;
+                document.body.style.background = "#f3ecf1";
+            }
+
+        </script>
+
+    </div>
+    <%- include('footer.ejs') %>
